@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+
 
 describe('Login na plataforma', () => {
 
@@ -6,7 +6,7 @@ describe('Login na plataforma', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
     });
 
-    it('Login com email e senha válidos', () => {
+    it('Deve fazer login com email e senha válidos', () => {
         cy.get('#username').type('aluno35@teste.com')
         cy.get('#password').type('teste@teste123')
         cy.get('.woocommerce-form > .button').click()
@@ -14,7 +14,7 @@ describe('Login na plataforma', () => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain.text', 'Olá, aluno35 (não é aluno35? Sair)')
     });
 
-    it('Login com email válido e senha inválida', () => {
+    it('Deve fazer login com email válido e senha inválida', () => {
         cy.get('#username').type('aluno35@teste.com')
         cy.get('#password').type('teste@teste12')
         cy.get('.woocommerce-form > .button').click()
@@ -22,7 +22,7 @@ describe('Login na plataforma', () => {
         cy.get('.woocommerce-error').should('contain.text', 'Erro: A senha fornecida para o e-mail aluno35@teste.com está incorreta. Perdeu a senha?')
     });
 
-    it('Login com email inválido e senha válida', () => {
+    it('Deve fazer login com email inválido e senha válida', () => {
         cy.get('#username').type('aluno35@teste.co')
         cy.get('#password').type('teste@teste123')
         cy.get('.woocommerce-form > .button').click()

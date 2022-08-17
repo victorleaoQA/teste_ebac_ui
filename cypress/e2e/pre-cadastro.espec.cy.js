@@ -14,7 +14,7 @@ describe('Funcionalidade pré-cadastro', () => {
         let nomeFaker = faker.name.firstName()
         let sobrenomeFaker = faker.name.lastName()
         let senhaFaker = faker.random.alphaNumeric(15)
-        let emailFaker = faker.internet.email()
+        let emailFaker = faker.internet.email() 
 
         cy.get('#reg_email').type(emailFaker)
         cy.get('#reg_password').type(senhaFaker)
