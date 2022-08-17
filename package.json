@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/victorleaoQA/teste_ebac_ui/issues"
   },
-  "homepage": "https://github.com/victorleaoQA/teste_ebac_ui#readme"
+  "homepage": "https://github.com/victorleaoQA/teste_ebac_ui#readme",
+  "dependencies": {
+    "faker": "^6.6.6"
+  }
 }
