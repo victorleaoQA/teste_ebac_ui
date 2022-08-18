@@ -31,6 +31,6 @@ describe('Funcionalidade Login na plataforma', () => {
         // cy.get('[data-testid="submitButton"]').click()
 
         // cy.get('.woocommerce-error').should('contain.text', 'Erro: A senha fornecida para o e-mail aluno35@teste.com está incorreta. Perdeu a senha?')
-    });
+    // });
     
 });
