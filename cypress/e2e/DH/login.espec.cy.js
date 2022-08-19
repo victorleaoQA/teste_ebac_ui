@@ -12,9 +12,13 @@ describe('Funcionalidade Login na plataforma', () => {
         cy.visit('https://br-playground.digitalhouse.com/login')
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve fazer login com email e senha válida', () => {
 
-        cy.get('[data-testid="emailInput"]').type(Login.email)
+        cy.get('[data-testid="emailInput"]').type(Login.email, {log:false})
         cy.get('[data-testid="pwInput"]').type(Login.senha, {log:false})
         cy.get('[data-testid="submitButton"]').click()
 
