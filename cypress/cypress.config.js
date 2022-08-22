@@ -5,16 +5,5 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-
-    baseUrl: "http://lojaebac.ebaconline.art.br/" // aqui eu declarei o domínio principal dos testes
-
   },
 });
-
-
-
-
-
-
-
-
