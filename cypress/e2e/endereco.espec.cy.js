@@ -28,19 +28,19 @@ describe('Fuincionalidade Endereços - Faturamento e Entrega', () => {
 		cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.');
 	});
 
-    it.only('Deve fazer cadastro de faturamento com sucesso - Usando arquivo de Massa de Dados', () => {
+    it('Deve fazer cadastro de faturamento com sucesso - Usando arquivo de Massa de Dados', () => {
 		EnderecoPage.editarEnderecoFaturamento(
-			enderecos[1].nome,
-            enderecos[1].sobrenome,
-            enderecos[1].empresa,
-            enderecos[1].pais,
-            enderecos[1].endereco,
-            enderecos[1].complemento,
-            enderecos[1].cidade,
-            enderecos[1].estado,
-            enderecos[1].cep,
-            enderecos[1].telefone,
-            enderecos[1].email
+			enderecos[2].nome,
+            enderecos[2].sobrenome,
+            enderecos[2].empresa,
+            enderecos[2].pais,
+            enderecos[2].endereco,
+            enderecos[2].complemento,
+            enderecos[2].cidade,
+            enderecos[2].estado,
+            enderecos[2].cep,
+            enderecos[2].telefone,
+            enderecos[2].email
 		);
 		cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.');
 	});
