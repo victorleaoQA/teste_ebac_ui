@@ -45,5 +45,13 @@ context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
       );
 
     cy.get(".dropdown-toggle > .mini-cart-items").should("contain.text", "4");
+
+    cy.get('.woocommerce-message > .button').click()
+    cy.get('#main').should("contain.text", produtos[0].nome)
+    cy.get('#main').should("contain.text", produtos[1].nome)
+    cy.get('#main').should("contain.text", produtos[2].nome)
+    cy.get('#main').should("contain.text", produtos[3].nome)
+
+
   });
 });
