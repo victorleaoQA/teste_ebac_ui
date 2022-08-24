@@ -2,6 +2,8 @@
 
 import ProdutoPage from "../support/page_objects/produtos.page";
 import produtos from "../fixtures/produtos.json";
+import enderecoPage from "../../../cypress/support/page-objects/endereco.page";
+import e2eEnderecoPage from "../support/page_objects/e2eEndereco.page";
 
 context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
   /*  Como cliente 
@@ -20,6 +22,8 @@ context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
   });
 
   it("Deve fazer um pedido na loja Ebac Shop de ponta a ponta", () => {
+
+
     ProdutoPage.adicionarProduto(
       produtos[0].nome,
       produtos[0].tamanho,
@@ -39,20 +43,35 @@ context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
     );
 
     ProdutoPage.adicionarProduto(
-        produtos[3].nome,
-        produtos[3].tamanho,
-        produtos[3].cor
-      );
+      produtos[3].nome,
+      produtos[3].tamanho,
+      produtos[3].cor
+    );
 
     cy.get(".dropdown-toggle > .mini-cart-items").should("contain.text", "4");
 
-    cy.get('.woocommerce-message > .button').click()
-    cy.get('#main').should("contain.text", produtos[0].nome)
-    cy.get('#main').should("contain.text", produtos[1].nome)
-    cy.get('#main').should("contain.text", produtos[2].nome)
-    cy.get('#main').should("contain.text", produtos[3].nome)
-    cy.get('.checkout-button').click()
+    cy.get(".woocommerce-message > .button").click();
+    cy.get("#main").should("contain.text", produtos[0].nome);
+    cy.get("#main").should("contain.text", produtos[1].nome);
+    cy.get("#main").should("contain.text", produtos[2].nome);
+    cy.get("#main").should("contain.text", produtos[3].nome);
+    cy.get(".checkout-button").click();
+
+    e2eEnderecoPage.editarEnderecoFaturamento(
+      'Victor',
+      'Leao',
+      'Google',
+      'Brasil',
+      'Rua Dois',
+      'Depois da Rua Um',
+      'Rio de Janeiro',
+      'Rio de Janeiro',
+      '24412000',
+      '21999998888',
+      'aluno@ebac.com'
+    )
 
 
   });
+
 });
