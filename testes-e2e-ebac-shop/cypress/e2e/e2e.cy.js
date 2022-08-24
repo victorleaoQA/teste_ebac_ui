@@ -51,6 +51,7 @@ context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
     cy.get('#main').should("contain.text", produtos[1].nome)
     cy.get('#main').should("contain.text", produtos[2].nome)
     cy.get('#main').should("contain.text", produtos[3].nome)
+    cy.get('.checkout-button').click()
 
 
   });
