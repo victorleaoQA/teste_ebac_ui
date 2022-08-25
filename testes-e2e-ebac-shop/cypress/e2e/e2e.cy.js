@@ -2,7 +2,6 @@
 
 import ProdutoPage from "../support/page_objects/produtos.page";
 import produtos from "../fixtures/produtos.json";
-import enderecoPage from "../../../cypress/support/page-objects/endereco.page";
 import e2eEnderecoPage from "../support/page_objects/e2eEndereco.page";
 
 context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
@@ -70,6 +69,14 @@ context("Exercicio - Testes End-to-end - Fluxo de pedido", () => {
       '21999998888',
       'aluno@ebac.com'
     )
+
+    cy.get('#terms').click()
+    cy.get('#place_order').click()
+
+    cy.wait(200)
+    // Tive que pesquisar esse comando pois estava dando erro. Não conseguia achar o próximo comando pois estava procurando antes de carregar a página de confirmação
+    cy.get('.page-title').should('contain', 'Pedido recebido')
+    
 
 
   });
